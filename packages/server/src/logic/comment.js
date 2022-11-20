@@ -20,8 +20,9 @@ module.exports = class extends Base {
    *
    * @apiParam  {String}  path  comment url path
    * @apiParam  {String}  page  page
-   * @apiParam  {String}  pagesize  page size
+   * @apiParam  {String}  pageSize  page size
    * @apiParam  {String}  sortBy  comment sort type, one of 'insertedAt_desc', 'insertedAt_asc', 'like_desc'
+   * @apiParam  {String}  lang  language
    *
    * @apiSuccess  (200) {Number}  page return current comments list page
    * @apiSuccess  (200) {Number}  pageSize  to  return error message if error
@@ -52,7 +53,8 @@ module.exports = class extends Base {
    * @apiVersion  0.0.1
    *
    * @apiParam  {String}  page  page
-   * @apiParam  {String}  pagesize  page size
+   * @apiParam  {String}  pageSize  page size
+   * @apiParam  {String}  lang  language
    *
    * @apiSuccess  (200) {Number}  errno 0
    * @apiSuccess  (200) {String}  errmsg  return error message if error
@@ -80,6 +82,7 @@ module.exports = class extends Base {
    * @apiVersion  0.0.1
    *
    * @apiParam  {String}  url a array string join by comma just like `a` or `a,b`, return site comment count if url empty
+   * @apiParam  {String}  lang  language
    *
    * @apiSuccessExample {Number} Single Path Response:
    * 300
@@ -92,6 +95,7 @@ module.exports = class extends Base {
    * @apiVersion  0.0.1
    *
    * @apiParam  {String}  count return comments number, default value is 10
+   * @apiParam  {String}  lang  language
    *
    * @apiSuccess  (200) {Object[]} response
    * @apiSuccess  (200) {String}  response.nick comment user nick name
@@ -181,11 +185,12 @@ module.exports = class extends Base {
    * @apiParam  {String}  mail  post comment user mail address
    * @apiParam  {String}  link  post comment user link
    * @apiParam  {String}  comment  post comment text
-   * @apiParam  {String}  url  the artcile url path of comment
+   * @apiParam  {String}  url  the article url path of comment
    * @apiParam  {String}  ua  browser user agent
    * @apiParam  {String}  pid parent comment id
    * @apiParam  {String}  rid root comment id
    * @apiParam  {String}  at  parent comment user nick name
+   * @apiParam  {String}  lang  language
    *
    * @apiSuccess  (200) {Number}  errno 0
    * @apiSuccess  (200) {String}  errmsg  return error message if error
@@ -224,8 +229,9 @@ module.exports = class extends Base {
    * @apiParam  {String}  [mail]  post comment user mail address
    * @apiParam  {String}  [link]  post comment user link
    * @apiParam  {String}  [comment]  post comment text
-   * @apiParam  {String}  [url]  the artcile url path of comment
+   * @apiParam  {String}  [url]  the article url path of comment
    * @apiParam  {Boolean} [like] like comment
+   * @apiParam  {String}  lang  language
    *
    * @apiSuccess  (200) {Number}  errno 0
    * @apiSuccess  (200) {String}  errmsg  return error message if error
@@ -276,6 +282,8 @@ module.exports = class extends Base {
    * @api {DELETE} /comment/:id delete comment
    * @apiGroup Comment
    * @apiVersion  0.0.1
+   *
+   * @apiParam  {String}  lang  language
    *
    * @apiSuccess  (200) {Number}  errno 0
    * @apiSuccess  (200) {String}  errmsg  return error message if error

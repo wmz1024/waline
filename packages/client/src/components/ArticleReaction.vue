@@ -27,8 +27,9 @@ import {
   onMounted,
   onUnmounted,
   ref,
+  watch,
 } from 'vue';
-import { fetchArticleCounter, updateArticleCounter } from '../api';
+import { getArticleCounter, updateArticleCounter } from '../api';
 import { VOTE_IDENTIFIER, VOTE_INDEX, useVoteStorage } from '../composables';
 import type { WalineConfig } from '../utils';
 import type { WalineLocale } from '../typings';
@@ -70,7 +71,7 @@ export default defineComponent({
       if (reaction.length) {
         const controller = new AbortController();
 
-        fetchArticleCounter({
+        getArticleCounter({
           serverURL,
           lang,
           paths: [path],
@@ -128,7 +129,15 @@ export default defineComponent({
         voteStorage.value = voteStorage.value.slice(-50);
     };
 
-    onMounted(() => fetchCounter());
+    onMounted(() => {
+      watch(
+        () => [config.value.serverURL, config.value.path],
+        () => {
+          fetchCounter();
+        },
+        { immediate: true }
+      );
+    });
     onUnmounted(() => abort?.());
 
     return {

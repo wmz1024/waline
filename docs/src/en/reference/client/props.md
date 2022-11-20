@@ -21,7 +21,8 @@ Article path id. Used to distinguish different _article pages_ to ensure loading
 
 Please ensure the uniqueness of each _article page_ path, otherwise the same comment list may be loaded .
 
-For example: If on your site `/example/path/` and `/example/path` is the same page, you should probably set `window.location.pathname.replace(/\/$/,'')`.
+- e.g. 1: If on your site `/example/path/` and `/example/path` is the same page, you should probably set `window.location.pathname.replace(/\/$/,'')`.
+- e.g. 2: If you store en docs at root, while serve other language docs at `/zh/`, `/ja/`, etc, you should probably set `window.location.pathname.replace(/^\/(fr|jp|zh)\//, '/')`.
 
 :::
 
@@ -76,6 +77,13 @@ Darkmode support
 :::
 
 For details of custom style and darkmode, please see [Custom Style](../../guide/client/style.md).
+
+## commentSorting
+
+- Type: `WalineCommentSorting`
+- Default: `'latest'`
+
+Comment list sorting methods. Optional values: `'latest'`, `'oldest'`, `'hottest'`
 
 ## meta
 
@@ -145,16 +153,17 @@ A demo using api of `lsky - pro`.
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Waline imageUploader demo</title>
-    <script src="https://unpkg.com/@waline/client@v1/dist/waline.js"></script>
     <link
       rel="stylesheet"
-      href="https://unpkg.com/@waline/client@v1/dist/waline.css"
+      href="https://unpkg.com/@waline/client@v2/dist/waline.css"
     />
   </head>
   <body>
     <div id="waline" style="max-width: 800px; margin: 0 auto"></div>
-    <script>
-      const waline = Waline.init({
+    <script type="module">
+      import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+
+      const waline = init({
         el: '#waline',
         serverURL: 'https://waline.vercel.app',
         path: '/',
@@ -208,10 +217,9 @@ A demo using prismjs to highlight code blocks.
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Waline highlighter demo</title>
-    <script src="https://unpkg.com/@waline/client@v1/dist/waline.js"></script>
     <link
       rel="stylesheet"
-      href="https://unpkg.com/@waline/client@v1/dist/waline.css"
+      href="https://unpkg.com/@waline/client@v2/dist/waline.css"
     />
     <script src="https://unpkg.com/prismjs@v1" data-manual></script>
     <script src="https://unpkg.com/prismjs@v1/plugins/autoloader/prism-autoloader.min.js"></script>
@@ -222,8 +230,10 @@ A demo using prismjs to highlight code blocks.
   </head>
   <body>
     <div id="waline" style="max-width: 800px; margin: 0 auto"></div>
-    <script>
-      const waline = Waline.init({
+    <script type="module">
+      import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+
+      const waline = init({
         el: '#waline',
         serverURL: 'https://waline.vercel.app',
         path: '/',
@@ -274,27 +284,28 @@ You can import $\TeX$ renderer to provide preview feature. We recommend you to u
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Waline highlighter 案例</title>
-    <script src="https://unpkg.com/@waline/client@v1/dist/waline.js"></script>
     <link
       rel="stylesheet"
-      href="https://unpkg.com/@waline/client@v1/dist/waline.css"
+      href="https://unpkg.com/@waline/client@v2/dist/waline.css"
     />
-    <script src="https://unpkg.com/katex@v0.15"></script>
     <link
       rel="stylesheet"
-      href="https://unpkg.com/katex@v0.15/dist/katex.min.css"
+      href="https://unpkg.com/katex@v0.16/dist/katex.min.css"
     />
   </head>
   <body>
     <div id="waline" style="max-width: 800px; margin: 0 auto"></div>
-    <script>
-      const waline = Waline.init({
+    <script type="module">
+      import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+      import katex from 'https://unpkg.com/katex@0.16/dist/katex.mjs';
+
+      const waline = init({
         el: '#waline',
         serverURL: 'https://waline.vercel.app',
         path: '/',
         lang: 'en-US',
         texRenderer: (blockmode, tex) =>
-          window.katex.renderToString(tex, {
+          katex.renderToString(tex, {
             displayMode: blockmode,
             throwOnError: false,
           }),
@@ -313,17 +324,18 @@ You can import $\TeX$ renderer to provide preview feature. We recommend you to u
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Waline highlighter 案例</title>
-    <script src="https://unpkg.com/@waline/client@v1/dist/waline.js"></script>
     <link
       rel="stylesheet"
-      href="https://unpkg.com/@waline/client@v1/dist/waline.css"
+      href="https://unpkg.com/@waline/client@v2/dist/waline.css"
     />
     <script src="https://unpkg.com/mathjax@v3/es5/tex-svg.js"></script>
   </head>
   <body>
     <div id="waline" style="max-width: 800px; margin: 0 auto"></div>
-    <script>
-      const waline = Waline.init({
+    <script type="module">
+      import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+
+      const waline = init({
         el: '#waline',
         serverURL: 'https://waline.vercel.app',
         path: '/',
@@ -396,11 +408,11 @@ You can import $\TeX$ renderer to provide preview feature. We recommend you to u
      *
      * @default (word) => search(word)
      */
-    more?: (word: string, currectCount: number) => Promise<WalineSearchResult>;
+    more?: (word: string, currentCount: number) => Promise<WalineSearchResult>;
   }
   ```
 
-Customize search featreus, you can disable search function by setting it to `false`.
+Customize search features, you can disable search function by setting it to `false`.
 
 ## copyright
 

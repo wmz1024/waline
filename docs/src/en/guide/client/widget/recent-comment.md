@@ -18,14 +18,14 @@ The latest comment widget is named `RecentComments` and contains three options:
 The data format returned by the component should be `Promise<{ comment: WalineComment[], destroy: () => void }>`.
 
 - `comment` property: an array of the most recent comments with exact number of `count`
-- `destory` method: a function which will destroy the widget
+- `destroy` method: a function which will destroy the widget
 
 ## Basic usage
 
 ```html
 <div id="waline-recent"></div>
 <script type="module">
-  import { RecentComments } from 'https://cdn.jsdelivr.net/npm/waline/dist/waline.mjs';
+  import { RecentComments } from 'https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.mjs';
 
   RecentComments({
     el: '#waline-recent',
@@ -43,14 +43,14 @@ This will be rendered on `#waline-recent` using the default style.
 
 ## Advanced usage
 
-If you are not satisfied with the default output format, you can call the component by omiting the `el` option to get the data and render it yourself.
+If you are not satisfied with the default output format, you can call the component by omitting the `el` option to get the data and render it yourself.
 
 Example:
 
 ```html
 <div id="waline-recent"></div>
 <script type="module">
-  import { RecentComments } from 'https://cdn.jsdelivr.net/npm/waline/dist/waline.mjs';
+  import { RecentComments } from 'https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.mjs';
 
   RecentComments({
     serverURL: 'http://waline.vercel.app',

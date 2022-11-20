@@ -22,7 +22,8 @@ Waline 的服务端地址。
 
 请保证每个 _文章页_ 路径的唯一性，否则可能会出现不同 _文章页_ 下加载相同评论列表的情况。
 
-例子: 如果你站点的 `/example/path/` 和 `/example/path` 对应同一个页面，你最好将其设置为 `window.location.pathname.replace(/\/$/,'')`。
+- 例子 1: 如果你站点的 `/example/path/` 和 `/example/path` 对应同一个页面，你可以将其设置为 `window.location.pathname.replace(/\/$/,'')`。
+- 例子 2: 如果你想在站点的根目录下存放中文文档，但在 `/en/` `/ja/` 等文件夹存放其他语言文档，你可以将其设置为 `window.location.pathname.replace(/^\/(en|fr|jp)\//, '/')`。
 
 :::
 
@@ -77,6 +78,13 @@ Waline 的服务端地址。
 :::
 
 自定义样式与暗黑模式详见 [自定义样式](../guide/client/style.md)。
+
+## commentSorting
+
+- 类型: `WalineCommentSorting`
+- 默认值: `'latest'`
+
+评论列表排序方式。可选值: `'latest'`, `'oldest'`, `'hottest'`
 
 ## meta
 
@@ -146,16 +154,17 @@ Waline 的服务端地址。
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Waline imageUploader 案例</title>
-    <script src="https://unpkg.com/@waline/client@v1/dist/waline.js"></script>
     <link
       rel="stylesheet"
-      href="https://unpkg.com/@waline/client@v1/dist/waline.css"
+      href="https://unpkg.com/@waline/client@v2/dist/waline.css"
     />
   </head>
   <body>
     <div id="waline" style="max-width: 800px; margin: 0 auto"></div>
-    <script>
-      const waline = Waline.init({
+    <script type="module">
+      import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+
+      const waline = init({
         el: '#waline',
         serverURL: 'https://waline.vercel.app',
         path: '/',
@@ -209,10 +218,9 @@ Waline 的服务端地址。
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Waline highlighter 案例</title>
-    <script src="https://unpkg.com/@waline/client@v1/dist/waline.js"></script>
     <link
       rel="stylesheet"
-      href="https://unpkg.com/@waline/client@v1/dist/waline.css"
+      href="https://unpkg.com/@waline/client@v2/dist/waline.css"
     />
     <script src="https://unpkg.com/prismjs@v1" data-manual></script>
     <script src="https://unpkg.com/prismjs@v1/plugins/autoloader/prism-autoloader.min.js"></script>
@@ -223,8 +231,10 @@ Waline 的服务端地址。
   </head>
   <body>
     <div id="waline" style="max-width: 800px; margin: 0 auto"></div>
-    <script>
-      const waline = Waline.init({
+    <script type="module">
+      import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+
+      const waline = init({
         el: '#waline',
         serverURL: 'https://waline.vercel.app',
         path: '/',
@@ -319,7 +329,7 @@ Waline 的服务端地址。
      *
      * @default (word) => search(word)
      */
-    more?: (word: string, currectCount: number) => Promise<WalineSearchResult>;
+    more?: (word: string, currentCount: number) => Promise<WalineSearchResult>;
   }
   ```
 

@@ -98,7 +98,6 @@ Make the following settings on your web page:
    <body>
      <!-- ... -->
      <div id="waline"></div>
-     <script src="https://unpkg.com/@waline/client@v2/dist/waline.mjs"></script>
      <script type="module">
        import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
 
