@@ -305,7 +305,7 @@ import {
   PreviewIcon,
 } from './Icons';
 import ImageWall from './ImageWall.vue';
-import { addComment, login, updateComment } from '../api/index.js';
+import { addComment, login, updateComment, UserInfo } from '../api/index.js';
 import {
   useEditor,
   useReCaptcha,
@@ -358,6 +358,7 @@ const props = withDefaults(
 );
 
 const emit = defineEmits<{
+  (event: 'log'): void;
   (event: 'cancelEdit'): void;
   (event: 'cancelReply'): void;
   (event: 'submit', comment: WalineComment): void;
@@ -426,7 +427,7 @@ const onKeyDown = (event: KeyboardEvent): void => {
   const key = event.key;
 
   // Shortcut key
-  if ((event.ctrlKey || event.metaKey) && key === 'Enter') submitComment();
+  if ((event.ctrlKey || event.metaKey) && key === 'Enter') void submitComment();
 };
 
 const uploadImage = (file: File): Promise<void> => {
@@ -442,8 +443,8 @@ const uploadImage = (file: File): Promise<void> => {
         `\r\n![${file.name}](${url})`
       );
     })
-    .catch((e) => {
-      alert(e.message);
+    .catch((err: Error) => {
+      alert(err.message);
       editor.value = editor.value.replace(uploadText, '');
     });
 };
@@ -453,7 +454,7 @@ const onDrop = (event: DragEvent): void => {
     const file = getImageFromDataTransfer(event.dataTransfer.items);
 
     if (file && canUploadImage.value) {
-      uploadImage(file);
+      void uploadImage(file);
       event.preventDefault();
     }
   }
@@ -463,7 +464,7 @@ const onPaste = (event: ClipboardEvent): void => {
   if (event.clipboardData) {
     const file = getImageFromDataTransfer(event.clipboardData.items);
 
-    if (file && canUploadImage.value) uploadImage(file);
+    if (file && canUploadImage.value) void uploadImage(file);
   }
 };
 
@@ -471,7 +472,7 @@ const onChange = (): void => {
   const inputElement = imageUploadRef.value!;
 
   if (inputElement.files && canUploadImage.value)
-    uploadImage(inputElement.files[0]).then(() => {
+    void uploadImage(inputElement.files[0]).then(() => {
       // clear input so a same image can be uploaded later
       inputElement.value = '';
     });
@@ -557,9 +558,10 @@ const submitComment = async (): Promise<void> => {
     comment,
   };
 
-  (props.edit
-    ? updateComment({ objectId: props.edit.objectId, ...options })
-    : addComment(options)
+  void (
+    props.edit
+      ? updateComment({ objectId: props.edit.objectId, ...options })
+      : addComment(options)
   )
     .then((resp) => {
       isSubmitting.value = false;
@@ -586,7 +588,7 @@ const onLogin = (event: Event): void => {
   event.preventDefault();
   const { lang, serverURL } = config.value;
 
-  login({
+  void login({
     serverURL,
     lang,
   }).then((data) => {
@@ -595,6 +597,7 @@ const onLogin = (event: Event): void => {
       'WALINE_USER',
       JSON.stringify(data)
     );
+    emit('log');
   });
 };
 
@@ -602,6 +605,7 @@ const onLogout = (): void => {
   userInfo.value = {};
   localStorage.setItem('WALINE_USER', 'null');
   sessionStorage.setItem('WALINE_USER', 'null');
+  emit('log');
 };
 
 const onProfile = (event: Event): void => {
@@ -615,7 +619,7 @@ const onProfile = (event: Event): void => {
   const top = (window.innerHeight - height) / 2;
   const query = new URLSearchParams({
     lng: lang,
-    token: userInfo.value!.token,
+    token: userInfo.value.token,
   });
   const handler = window.open(
     `${serverURL}/ui/profile?${query.toString()}`,
@@ -623,19 +627,19 @@ const onProfile = (event: Event): void => {
     `width=${width},height=${height},left=${left},top=${top},scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no`
   );
 
-  handler?.postMessage({ type: 'TOKEN', data: userInfo.value!.token }, '*');
+  handler?.postMessage({ type: 'TOKEN', data: userInfo.value.token }, '*');
 };
 
 const popupHandler = (event: MouseEvent): void => {
   if (
-    !emojiButtonRef.value!.contains(event.target as Node) &&
-    !emojiPopupRef.value!.contains(event.target as Node)
+    !emojiButtonRef.value?.contains(event.target as Node) &&
+    !emojiPopupRef.value?.contains(event.target as Node)
   )
     showEmoji.value = false;
 
   if (
-    !gifButtonRef.value!.contains(event.target as Node) &&
-    !gifPopupRef.value!.contains(event.target as Node)
+    !gifButtonRef.value?.contains(event.target as Node) &&
+    !gifPopupRef.value?.contains(event.target as Node)
   )
     showGif.value = false;
 };
@@ -667,7 +671,7 @@ const onImageWallScroll = async (event: Event): Promise<void> => {
 
 const onGifSearch = useDebounceFn((event: Event) => {
   searchResults.list = [];
-  onImageWallScroll(event);
+  void onImageWallScroll(event);
 }, 300);
 
 // update wordNumber
@@ -695,8 +699,11 @@ watch(
   { immediate: true }
 );
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const onMessageReceive = ({ data }: any): void => {
+const onMessageReceive = ({
+  data,
+}: {
+  data: { type: 'profile'; data: UserInfo };
+}): void => {
   if (!data || data.type !== 'profile') return;
 
   userInfo.value = { ...userInfo.value, ...data.data };

@@ -2,7 +2,7 @@
   <div data-waline>
     <Reaction />
 
-    <CommentBox v-if="!reply" @submit="onSubmit" />
+    <CommentBox v-if="!reply" @log="refresh" @submit="onSubmit" />
 
     <div class="wl-meta-head">
       <div class="wl-count">
@@ -15,7 +15,7 @@
           v-for="item in sortingMethods"
           :key="item"
           :class="[item === commentSorting ? 'active' : '']"
-          @click="() => onSortByChange(item)"
+          @click="onSortByChange(item)"
         >
           {{ i18n[item] }}
         </li>
@@ -30,6 +30,7 @@
         :comment="comment"
         :reply="reply"
         :edit="edit"
+        @log="refresh"
         @reply="onReply"
         @edit="onEdit"
         @submit="onSubmit"
@@ -522,7 +523,7 @@ const getCommentData = (pageNumber: number): void => {
       page.value = pageNumber;
       totalPages.value = resp.totalPages;
     })
-    .catch((err) => {
+    .catch((err: Error) => {
       if (err.name !== 'AbortError') {
         console.error(err.message);
         status.value = 'error';
