@@ -1,6 +1,6 @@
 ---
 title: Cookbook
-icon: cookbook
+icon: signs-post
 ---
 
 This cookbook will introduce Waline in more depth.

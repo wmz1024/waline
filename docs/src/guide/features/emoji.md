@@ -1,6 +1,6 @@
 ---
 title: 表情选项卡
-icon: emoji
+icon: face-smile
 redirectFrom: /guide/client/emoji.html
 ---
 

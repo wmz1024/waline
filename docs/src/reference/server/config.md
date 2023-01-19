@@ -1,6 +1,6 @@
 ---
 title: 服务端配置
-icon: config
+icon: gears
 redirectFrom: /reference/server.html
 ---
 

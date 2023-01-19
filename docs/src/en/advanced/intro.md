@@ -1,6 +1,6 @@
 ---
 title: Intro
-icon: intro
+icon: circle-info
 ---
 
 ::: info Waline

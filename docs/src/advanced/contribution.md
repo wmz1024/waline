@@ -1,6 +1,6 @@
 ---
 title: 贡献指南
-icon: contribute
+icon: sign-posts
 redirectFrom: /reference/contribution.html
 ---
 

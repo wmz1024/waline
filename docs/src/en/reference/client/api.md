@@ -1,6 +1,6 @@
 ---
 title: Client API
-icon: config
+icon: plug
 redirectFrom: /en/reference/client.html
 ---
 

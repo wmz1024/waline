@@ -1,6 +1,6 @@
 ---
 title: Comment Format Support
-icon: format
+icon: pen-ruler
 redirectFrom: /en/guide/client/syntax.html
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Development Guide
-icon: contribute
+icon: sign-posts
 redirectFrom: /en/reference/contribution.html
 ---
 

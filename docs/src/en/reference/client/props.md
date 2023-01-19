@@ -1,6 +1,6 @@
 ---
 title: Component Props
-icon: config
+icon: gears
 redirectFrom: /en/reference/component.html
 ---
 

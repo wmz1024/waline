@@ -1,6 +1,6 @@
 ---
 title: 添加代码高亮器
-icon: style
+icon: wand-magic-sparkles
 ---
 
 本教程将指导你设置自己的代码高亮器。

@@ -33,7 +33,7 @@ export default hopeTheme({
     },
   },
 
-  iconAssets: '//at.alicdn.com/t/c/font_3180165_u7vein90ekb.css',
+  iconAssets: 'fontawesome-with-brands ',
 
   plugins: {
     blog: false,
@@ -44,7 +44,7 @@ export default hopeTheme({
       recaptchaV3Key: '6Lfz4-shAAAAANgsYRR0datkzv6zLIaKrSqfHsiG',
       pageview: true,
       reaction: true,
-      walineLocales: {
+      locales: {
         '/': {
           admin: '可爱的管理员',
           level0: '锻体',

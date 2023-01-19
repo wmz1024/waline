@@ -14,25 +14,25 @@ actions:
 
 features:
   - title: 自由评论
-    icon: markdown
+    icon: fab fa-fw fa-sm fa-markdown
     details: 完全的 Markdown 支持，同时包含表情、数学公式、HTML 嵌入
     link: /guide/features/syntax.html
 
   - title: 轻量
-    icon: light
+    icon: bolt
     details: 53kb gzip 的完整客户端大小
 
   - title: 强大的安全性
-    icon: safe
+    icon: shield
     details: 内容校验、防灌水、保护敏感数据等
     link: /guide/features/safety.html
 
   - title: 登录支持
-    icon: register
+    icon: user-plus
     details: 在允许匿名评论的基础上，支持账号注册，保持身份
 
   - title: 文章反应
-    icon: reaction
+    icon: face-smile
     details: 快速表达你对文章的态度
     link: /guide/features/reaction.html
 

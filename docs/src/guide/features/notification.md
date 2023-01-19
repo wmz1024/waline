@@ -1,6 +1,6 @@
 ---
 title: 评论通知
-icon: notice
+icon: bell
 redirectFrom: /guide/server/notification.html
 ---
 

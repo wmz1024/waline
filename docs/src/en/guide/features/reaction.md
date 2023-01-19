@@ -1,6 +1,6 @@
 ---
 title: Article Reactions
-icon: reaction
+icon: face-smile
 redirectFrom: /en/guide/client/reaction.html
 ---
 

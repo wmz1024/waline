@@ -5,13 +5,13 @@ export const zhNavbarConfig = navbar([
   '/cookbook/',
   {
     text: '迁移',
-    icon: 'migration',
+    icon: 'code-compare',
     prefix: '/migration/',
     children: ['client', 'valine', 'tool'],
   },
   {
     text: '参考',
-    icon: 'reference',
+    icon: 'book',
     prefix: '/reference/',
     children: [
       {
@@ -28,7 +28,7 @@ export const zhNavbarConfig = navbar([
   },
   {
     text: '高级',
-    icon: 'advanced',
+    icon: 'gem',
     prefix: '/advanced/',
     children: ['intro', 'design', 'ecosystem', 'faq', 'contribution'],
   },
@@ -39,13 +39,13 @@ export const enNavbarConfig = navbar([
   '/en/cookbook/',
   {
     text: 'Migration',
-    icon: 'migration',
+    icon: 'code-compare',
     prefix: '/en/migration/',
     children: ['client', 'valine', 'tool'],
   },
   {
     text: 'Reference',
-    icon: 'reference',
+    icon: 'book',
     prefix: '/en/reference/',
     children: [
       {
@@ -62,7 +62,7 @@ export const enNavbarConfig = navbar([
   },
   {
     text: 'Advanced',
-    icon: 'advanced',
+    icon: 'gem',
     prefix: '/en/advanced/',
     children: ['intro', 'design', 'ecosystem', 'faq', 'contribution'],
   },

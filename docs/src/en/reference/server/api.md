@@ -1,6 +1,6 @@
 ---
-title: API
-icon: api
+title: Server API
+icon: plug
 redirectFrom: /en/reference/api.html
 ---
 

@@ -11,7 +11,7 @@ export const zhSidebarConfig = sidebar({
     'syntax',
     {
       text: '自定义',
-      icon: 'customize',
+      icon: 'gears',
       prefix: 'customize/',
       children: [
         'emoji',
@@ -26,14 +26,14 @@ export const zhSidebarConfig = sidebar({
     'reactivity',
     {
       text: '兼容',
-      icon: 'history',
+      icon: 'time',
       children: ['legacy', 'emoji-compact'],
     },
   ],
   '/guide/': [
     {
       text: '快速上手',
-      icon: 'creative',
+      icon: 'lightbulb',
       prefix: 'get-started/',
       children: ['', 'client', 'server'],
     },
@@ -59,7 +59,7 @@ export const zhSidebarConfig = sidebar({
     'database',
     {
       text: '部署',
-      icon: 'deploy',
+      icon: 'rocket',
       prefix: 'deploy/',
       children: [
         'vercel',
@@ -75,7 +75,7 @@ export const zhSidebarConfig = sidebar({
   '/': [
     {
       text: '指南',
-      icon: 'creative',
+      icon: 'lightbulb',
       prefix: 'guide/',
       children: [
         'get-started/',
@@ -105,12 +105,12 @@ export const zhSidebarConfig = sidebar({
     'cookbook/',
     {
       text: '参考',
-      icon: 'reference',
+      icon: 'book',
       prefix: 'reference/',
       children: [
         {
           text: '客户端',
-          icon: 'client',
+          icon: 'fab fa-fw fa-sm fa-chrome',
           prefix: 'client/',
           children: ['api', 'props', 'file', 'style'],
         },
@@ -124,14 +124,14 @@ export const zhSidebarConfig = sidebar({
     },
     {
       text: '迁移',
-      icon: 'migration',
+      icon: 'code-compare',
       prefix: 'migration/',
       collapsible: true,
       children: ['client', 'valine', 'tool'],
     },
     {
       text: '高级',
-      icon: 'advanced',
+      icon: 'gem',
       prefix: 'advanced/',
       collapsible: true,
       children: ['intro', 'design', 'ecosystem', 'faq', 'contribution'],
@@ -150,7 +150,7 @@ export const enSidebarConfig = sidebar({
     'syntax',
     {
       text: 'Customize',
-      icon: 'customize',
+      icon: 'gears',
       prefix: 'customize/',
       children: [
         'emoji',
@@ -165,14 +165,14 @@ export const enSidebarConfig = sidebar({
     'reactivity',
     {
       text: 'Compatibility',
-      icon: 'history',
+      icon: 'time',
       children: ['legacy', 'emoji-compact'],
     },
   ],
   '/en/guide/': [
     {
       text: 'Get Started',
-      icon: 'creative',
+      icon: 'lightbulb',
       prefix: 'get-started/',
       children: ['', 'client', 'server'],
     },
@@ -198,7 +198,7 @@ export const enSidebarConfig = sidebar({
     'database',
     {
       text: 'Deploy',
-      icon: 'deploy',
+      icon: 'rocket',
       prefix: 'deploy/',
       children: ['vercel', 'deta', 'railway', 'vps'],
     },
@@ -206,7 +206,7 @@ export const enSidebarConfig = sidebar({
   '/en/': [
     {
       text: 'Guide',
-      icon: 'creative',
+      icon: 'lightbulb',
       prefix: 'guide/',
       children: [
         'get-started/',
@@ -236,12 +236,12 @@ export const enSidebarConfig = sidebar({
     'cookbook/',
     {
       text: 'Reference',
-      icon: 'reference',
+      icon: 'book',
       prefix: 'reference/',
       children: [
         {
           text: 'Client',
-          icon: 'client',
+          icon: 'fab fa-fw fa-sm fa-chrome',
           prefix: 'client/',
           children: ['api', 'props', 'file', 'style'],
         },
@@ -255,14 +255,14 @@ export const enSidebarConfig = sidebar({
     },
     {
       text: 'Migration',
-      icon: 'migration',
+      icon: 'code-compare',
       prefix: 'migration/',
       collapsible: true,
       children: ['client', 'valine', 'tool'],
     },
     {
       text: 'Advanced',
-      icon: 'advanced',
+      icon: 'gem',
       prefix: '/advanced/',
       collapsible: true,
       children: ['intro', 'design', 'ecosystem', 'faq', 'contribution'],

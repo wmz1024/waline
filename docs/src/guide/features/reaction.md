@@ -1,6 +1,6 @@
 ---
 title: 文章反应
-icon: reaction
+icon: face-smile
 redirectFrom: /guide/client/reaction.html
 ---
 

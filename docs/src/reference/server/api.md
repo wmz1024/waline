@@ -1,6 +1,6 @@
 ---
-title: API
-icon: api
+title: 服务端 API
+icon: plug
 redirectFrom: /reference/api.html
 ---
 

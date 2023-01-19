@@ -1,6 +1,6 @@
 ---
 title: Server Config
-icon: config
+icon: gears
 redirectFrom: /en/reference/server.html
 ---
 

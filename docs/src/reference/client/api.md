@@ -1,6 +1,6 @@
 ---
 title: 客户端 API
-icon: config
+icon: plug
 redirectFrom: /reference/client.html
 ---
 

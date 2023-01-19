@@ -1,6 +1,6 @@
 ---
 title: Migration to @waline/client V2
-icon: migration
+icon: code-compare
 ---
 
 ## API changes

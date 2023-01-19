@@ -1,6 +1,6 @@
 ---
 title: Customize Code Highlighter
-icon: style
+icon: wand-magic-sparkles
 ---
 
 This cookbook guides you how to add your own code highlighter.

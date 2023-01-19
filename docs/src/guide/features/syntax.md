@@ -1,6 +1,6 @@
 ---
 title: 评论格式支持
-icon: format
+icon: pen-ruler
 redirectFrom: /guide/client/syntax.html
 ---
 

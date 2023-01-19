@@ -1,6 +1,6 @@
 ---
 title: Comment Notification
-icon: notice
+icon: bell
 redirectFrom: /en/guide/server/notification.html
 ---
 

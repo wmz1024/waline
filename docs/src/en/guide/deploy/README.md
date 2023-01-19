@@ -1,6 +1,6 @@
 ---
 title: Deploy
-icon: deploy
+icon: rocket
 ---
 
 Waline supports multiple deployment methods, you can choose from the following deployment platforms.

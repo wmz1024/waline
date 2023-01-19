@@ -1,6 +1,6 @@
 ---
 title: Client Intro
-icon: client
+icon: fab fa-fw fa-sm fa-chrome
 redirectFrom: /en/guide/client/intro.html
 ---
 

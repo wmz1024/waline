@@ -1,6 +1,6 @@
 ---
 title: 评论格式支持
-icon: format
+icon: pen-ruler
 ---
 
 评论中支持的 Markdown 语法如下。

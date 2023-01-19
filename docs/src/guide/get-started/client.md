@@ -1,6 +1,6 @@
 ---
 title: 客户端简介
-icon: client
+icon: fab fa-fw fa-sm fa-chrome
 redirectFrom: /guide/client/intro.html
 ---
 

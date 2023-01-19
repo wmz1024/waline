@@ -1,6 +1,6 @@
 ---
 title: 组件属性
-icon: config
+icon: gears
 redirectFrom: /reference/component.html
 ---
 

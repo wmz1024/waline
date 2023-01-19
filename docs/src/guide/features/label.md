@@ -1,6 +1,6 @@
 ---
 title: 用户标签
-icon: label
+icon: tag
 redirectFrom: /guide/client/label.html
 ---
 

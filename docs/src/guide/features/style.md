@@ -1,6 +1,6 @@
 ---
 title: 自定义样式
-icon: style
+icon: wand-magic-sparkles
 redirectFrom: /guide/client/style.html
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Get Started
-icon: creative
+icon: lightbulb
 redirectFrom: /en/guide/get-started.html
 ---
 

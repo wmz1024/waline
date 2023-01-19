@@ -1,6 +1,6 @@
 ---
 title: 服务端环境变量
-icon: config
+icon: leaf
 redirectFrom: /reference/env.html
 ---
 

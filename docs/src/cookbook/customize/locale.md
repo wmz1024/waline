@@ -1,6 +1,6 @@
 ---
 title: 自定义语言
-icon: i18n
+icon: language
 ---
 
 本教程指引你自定义 `@waline/client` 多语言与显示文字。

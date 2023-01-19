@@ -1,6 +1,6 @@
 ---
 title: Create your own Emoji presets
-icon: emoji
+icon: face-smile
 ---
 
 This cookbook will show you how to create and use your own Emoji presets.

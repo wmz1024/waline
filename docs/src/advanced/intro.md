@@ -1,6 +1,6 @@
 ---
 title: 介绍
-icon: intro
+icon: circle-info
 ---
 
 ::: info Waline

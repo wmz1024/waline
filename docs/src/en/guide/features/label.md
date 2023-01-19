@@ -1,6 +1,6 @@
 ---
 title: User label
-icon: label
+icon: tag
 redirectFrom: /en/guide/client/label.html
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Customize Locale
-icon: i18n
+icon: language
 ---
 
 This cookbook guides you to customize `@waline/client` multilingual and display text.

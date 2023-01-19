@@ -1,6 +1,6 @@
 ---
 title: CSS variable
-icon: style
+icon: wand-magic-sparkles
 ---
 
 `@waline/client` provides some CSS variables. You can easily configure the style of waline through these variables.

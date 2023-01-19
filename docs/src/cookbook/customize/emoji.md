@@ -1,6 +1,6 @@
 ---
 title: 创建自己的表情预设
-icon: emoji
+icon: face-smile
 ---
 
 本教程将指导你如何创建并使用自己的表情预设。

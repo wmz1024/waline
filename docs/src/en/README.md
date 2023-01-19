@@ -14,25 +14,25 @@ actions:
 
 features:
   - title: Comment the way you like
-    icon: markdown
+    icon: fab fa-fw fa-sm fa-markdown
     details: Full Markdown support, with emoji, mathematical formulas and HTML embedding support
     link: /en/guide/features/syntax.html
 
   - title: LightWeight
-    icon: light
+    icon: bolt
     details: Full client size of 53kb gzip
 
   - title: Improved Security
-    icon: safe
+    icon: shield
     details: Content verification, anti-spamming, protection of sensitive data, etc.
     link: /en/guide/features/safety.html
 
   - title: Login support
-    icon: register
+    icon: user-plus
     details: Besides anonymous comments, account registration is supported to maintain identity
 
   - title: Article Reaction
-    icon: reaction
+    icon: face-smile
     details: Quickly show your attitude towards the article
     link: /en/guide/features/reaction.html
 

@@ -1,6 +1,6 @@
 ---
 title: 部署
-icon: deploy
+icon: rocket
 ---
 
 Waline 支持多种部署方式，你可以从以下部署平台进行选择。

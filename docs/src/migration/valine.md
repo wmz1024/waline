@@ -1,6 +1,6 @@
 ---
 title: 从 Valine 迁移
-icon: valine
+icon: v
 ---
 
 由于 Waline 在存储上完全复用了 Valine 的数据结构，所以从 Valine 迁移至 Waline 非常简单。

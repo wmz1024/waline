@@ -1,6 +1,6 @@
 ---
 title: Migration from Valine
-icon: valine
+icon: v
 ---
 
 Since Waline completely reuses Valine's data structure in storage, migrating from Valine to Waline is very simple.

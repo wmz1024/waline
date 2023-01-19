@@ -1,6 +1,6 @@
 ---
 title: Comment Format Support
-icon: format
+icon: pen-ruler
 ---
 
 The supported Markdown syntax in comments is as follows.

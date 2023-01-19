@@ -1,6 +1,6 @@
 ---
 title: Waline 客户端 V2 迁移指南
-icon: migration
+icon: code-compare
 ---
 
 ## API 更改

@@ -1,6 +1,6 @@
 ---
 title: Emoji Customize
-icon: emoji
+icon: face-smile
 redirectFrom: /en/guide/client/emoji.html
 ---
 

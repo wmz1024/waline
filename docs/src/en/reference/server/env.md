@@ -1,6 +1,6 @@
 ---
 title: Server Environment Variables
-icon: config
+icon: leaf
 redirectFrom: /en/reference/env.html
 ---
 
